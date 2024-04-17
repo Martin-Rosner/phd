@@ -12,9 +12,9 @@ Every IEEE 11073-20601 metric instance is required to have a Type attribute. In 
 
 Once this MDC code value is obtained, the Observation.code element is populated as follows:
 
+* if the MDC code represents a vital sign observation as defined in the [Vital Signs Panel Profile](https://www.hl7.org/fhir/observation-vitalsigns.html), a corresponding LOINC code shall be present
 * if the application wishes to transcode this MDC code into other coding systems the application is free to do so but
   * the MDC code shall be present in a coding element
-  * if the code matches one of the [FHIR LOINC magic codes]( https://www.hl7.org/fhir/observation-vitalsigns.html)), the LOINC magic code shall be present in a coding element
   * any other coding translations desired may be placed in an additional coding element.
 * for the MDC code the mapping is as follows:
   * Observation.code.coding.code = *value*
